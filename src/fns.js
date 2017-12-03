@@ -7,26 +7,24 @@ const deal = (cards=0) => {
 const shuffle = (deckType = Constants.Decks.STANDARD) => {
   const deck = [];
   const cards = Constants.Cards;
-  const cardKeys = Object.keys(cards);
   const suits = Constants.Suits;
+  const cardKeys = Object.keys(cards);
   const suitKeys = Object.keys(suits);
 
-  cardKeys.forEach((cardValue, cardIndex) => {
+  cardKeys.forEach((cardValue) => {
     switch (deckType) {
-      // works
       case Constants.Decks.STANDARD:
       case Constants.Decks.STANDARD_JOKER:
-        if (Constants.Cards[cardValue].decks.includes(deckType)) {
-          suitKeys.forEach((suitValue, suitIndex) => {
+        const card = Constants.Cards[cardValue];
+        if (card.decks.includes(deckType)) {
+          suitKeys.forEach((suitValue) => {
             const suit = Constants.Suits[suitValue];
-            if (Constants.Cards[cardValue].suits.includes(suit)) {
-              const preferredName = Constants.Cards[cardValue].preferredName || Constants.Cards[cardValue].name;
+            if (card.suits.includes(suit)) {
+              const preferredName = card.preferredName || card.name;
               const suitName = Constants.Suits[suitValue].name;
-              if (suit.standard) {
-                deck.push(`${preferredName} of ${suitName}`);
-              } else {
-                deck.push(`${preferredName} ${suitName}`);
-              }
+              const paddedPreposition = suit.preposition ? Constants.SINGLE_SPACE + suit.preposition + Constants.SINGLE_SPACE: Constants.SINGLE_SPACE;
+              const cardDescription = preferredName + paddedPreposition + suitName;
+              deck.push(cardDescription);
             }
           });
         }
@@ -35,6 +33,7 @@ const shuffle = (deckType = Constants.Decks.STANDARD) => {
         console.error('Invalid deck type');
     }
   });
+
   // Randomly sort cards
   return deck.sort(() => Math.random() - 0.5);
 };

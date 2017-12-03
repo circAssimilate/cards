@@ -1,3 +1,6 @@
+const LINE_BREAK = '\n';
+const SINGLE_SPACE = ' ';
+
 const Decks = {
   STANDARD: 'STANDARD',
   STANDARD_JOKER: 'STANDARD_JOKER',
@@ -7,32 +10,32 @@ const Suits = {
   CLUBS: {
     name: 'Clubs',
     color: 'black',
-    standard: true,
+    preposition: 'of'
   },
   DIAMONDS: {
     name: 'Diamonds',
     color: 'red',
-    standard: true,
+    preposition: 'of'
   },
   HEARTS: {
     name: 'Hearts',
     color: 'red',
-    standard: true,
+    preposition: 'of'
   },
   SPADES: {
     name: 'Spades',
     color: 'black',
-    standard: true,
+    preposition: 'of'
   },
   BIG: {
     name: '(big)',
     color: null,
-    standard: false,
+    preposition: null
   },
   SMALL: {
     name: '(small)',
     color: null,
-    standard: false,
+    preposition: null
   },
 };
 
@@ -246,29 +249,16 @@ const Cards = {
       Suits.SPADES,
     ],
   },
-  JOKER_BIG: {
+  JOKER: {
     name: 'Joker',
     preferredName: null,
     rank: [],
     value: 50,
     decks: [
-      Decks.STANDARD,
       Decks.STANDARD_JOKER,
     ],
     suits: [
       Suits.BIG,
-    ],
-  },
-  JOKER_SMALL: {
-    name: 'Joker',
-    preferredName: null,
-    rank: [],
-    value: 50,
-    decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
-    ],
-    suits: [
       Suits.SMALL,
     ],
   },
@@ -277,5 +267,7 @@ const Cards = {
 export default {
   Cards,
   Decks,
+  LINE_BREAK,
+  SINGLE_SPACE,
   Suits,
 }
