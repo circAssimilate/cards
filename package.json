@@ -1,10 +1,10 @@
 {
-  "name": "cards",
+  "name": "Cards",
   "version": "0.1.0",
-  "description": "Best dealer in the west",
+  "description": "Best dealer in the west.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/npm.git"
+    "url": "https://github.com/circAssimilate/cards.git"
   },
   "main": "index.js",
   "scripts": {
