@@ -1,11 +1,15 @@
 import Constants from './constants.js';
 
-const createPlayer = () => {
-  return {
-    id: uuid(),
-    hand: [],
-    name: null,
+const createPlayersList = (playerCount = 1) => {
+  const players = [];
+  for (var i = 0; i < playerCount; i++) {
+    players.push({
+      id: uuid(),
+      hand: [],
+      name: null,
+    });
   }
+  return players;
 };
 
 const deal = (cards=0) => {
@@ -54,7 +58,7 @@ const uuid = () => {
 };
 
 export default {
-  createPlayer,
+  createPlayersList,
   deal,
   shuffle,
   uuid,
