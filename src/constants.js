@@ -2,8 +2,14 @@ const LINE_BREAK = '\n';
 const SINGLE_SPACE = ' ';
 
 const Decks = {
-  STANDARD: 'STANDARD',
-  STANDARD_JOKER: 'STANDARD_JOKER',
+  STANDARD: {
+    key: 'STANDARD',
+    name: 'Standard Deck',
+  },
+  STANDARD_JOKER: {
+    key: 'STANDARD_JOKER',
+    name: 'Standard Deck (2 Jokers)',
+  },
 };
 
 const Suits = {
@@ -47,8 +53,8 @@ const Cards = {
     rank: [3],
     value: 5,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -63,8 +69,8 @@ const Cards = {
     rank: [4],
     value: 5,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -79,8 +85,8 @@ const Cards = {
     rank: [5],
     value: 5,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -95,8 +101,8 @@ const Cards = {
     rank: [6],
     value: 5,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -111,8 +117,8 @@ const Cards = {
     rank: [7],
     value: 5,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -127,8 +133,8 @@ const Cards = {
     rank: [8],
     value: 5,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -143,8 +149,8 @@ const Cards = {
     rank: [9],
     value: 5,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -159,8 +165,8 @@ const Cards = {
     rank: [10],
     value: 5,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -175,8 +181,8 @@ const Cards = {
     rank: [11],
     value: 10,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -191,8 +197,8 @@ const Cards = {
     rank: [12],
     value: 10,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -207,8 +213,8 @@ const Cards = {
     rank: [13],
     value: 10,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -223,8 +229,8 @@ const Cards = {
     rank: [14],
     value: 10,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -239,8 +245,8 @@ const Cards = {
     rank: [0, 13],
     value: 20,
     decks: [
-      Decks.STANDARD,
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD.key,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.CLUBS,
@@ -255,7 +261,7 @@ const Cards = {
     rank: [],
     value: 50,
     decks: [
-      Decks.STANDARD_JOKER,
+      Decks.STANDARD_JOKER.key,
     ],
     suits: [
       Suits.BIG,

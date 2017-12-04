@@ -1,10 +1,18 @@
 import Constants from './constants.js';
 
+const createPlayer = () => {
+  return {
+    id: uuid(),
+    hand: [],
+    name: null,
+  }
+};
+
 const deal = (cards=0) => {
   console.log('DEAL');
 };
 
-const shuffle = (deckType = Constants.Decks.STANDARD) => {
+const shuffle = (deckType = Constants.Decks.STANDARD.key) => {
   const deck = [];
   const cards = Constants.Cards;
   const suits = Constants.Suits;
@@ -13,8 +21,8 @@ const shuffle = (deckType = Constants.Decks.STANDARD) => {
 
   cardKeys.forEach((cardValue) => {
     switch (deckType) {
-      case Constants.Decks.STANDARD:
-      case Constants.Decks.STANDARD_JOKER:
+      case Constants.Decks.STANDARD.key:
+      case Constants.Decks.STANDARD_JOKER.key:
         const card = Constants.Cards[cardValue];
         if (card.decks.includes(deckType)) {
           suitKeys.forEach((suitValue) => {
@@ -38,8 +46,17 @@ const shuffle = (deckType = Constants.Decks.STANDARD) => {
   return deck.sort(() => Math.random() - 0.5);
 };
 
+const uuid = () => {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    let r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  }).toUpperCase();
+};
+
 export default {
+  createPlayer,
   deal,
   shuffle,
+  uuid,
 }
 
